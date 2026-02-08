@@ -196,7 +196,11 @@ void grOnett_801E502C(Ground_GObj* gobj) {}
 
 /// #grOnett_801E5030
 
-/// #grOnett_801E5140
+void grOnett_801E5140(int index)
+{
+    u32 sfx_ids[] = { 0x0005F370, 0x0005F370, 0x0005F371, 0x0005F372 };
+    Ground_801C53EC(sfx_ids[index]);
+}
 
 /// #grOnett_801E5194
 

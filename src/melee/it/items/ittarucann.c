@@ -4,6 +4,7 @@
 #include "it/it_26B1.h"
 #include "it/it_2725.h"
 #include "it/item.h"
+#include "lb/lb_00B0.h"
 
 /// #it_80295ED4
 
@@ -104,7 +105,13 @@ void it_80296E88(Item_GObj* gobj)
     it_80296EF0(gobj);
 }
 
-/// #it_80296EA8
+void it_80296EA8(Item_GObj* gobj)
+{
+    Item* ip = GET_ITEM(gobj);
+    lb_8000B804(gobj->hsd_obj,
+                ip->xC4_article_data->x10_modelDesc->x0_joint);
+    it_80296EF0(gobj);
+}
 
 /// #it_80296EF0
 

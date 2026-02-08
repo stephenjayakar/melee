@@ -20,7 +20,13 @@ bool itTools_Logic22_DmgDealt(Item_GObj* gobj)
 
 /// #itTools_UnkMotion4_Anim
 
-/// #itTools_UnkMotion4_Phys
+void itTools_UnkMotion4_Phys(Item_GObj* gobj)
+{
+    Item* ip = GET_ITEM(gobj);
+    itToolsAttributes* attrs = ip->xC4_article_data->x4_specialAttributes;
+    s32 index = ip->xDD4_itemVar.tools.x0;
+    it_80272860(gobj, attrs->entries[index].x4, attrs->entries[index].x8);
+}
 
 /// #itTools_UnkMotion4_Coll
 

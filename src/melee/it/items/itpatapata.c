@@ -3,6 +3,7 @@
 #include <placeholder.h>
 #include <platform.h>
 
+#include "ft/ftlib.h"
 #include "it/inlines.h"
 #include "it/it_266F.h"
 #include "it/it_26B1.h"
@@ -101,7 +102,15 @@ bool it_2725_Logic4_DmgReceived(Item_GObj* gobj)
     return false;
 }
 
-/// #it_802E0F1C
+bool it_802E0F1C(Item_GObj* gobj)
+{
+    Item* ip = GET_ITEM(gobj);
+    PAD_STACK(8);
+    it_802E11E0();
+    Item_8026AE84(ip, 0x12E, 0x7F, 0x40);
+    ftLib_80086D40(ip->xCFC, 12, 0);
+    return false;
+}
 
 void itPatapata_Logic4_PickedUp(Item_GObj* gobj)
 {
@@ -130,7 +139,16 @@ bool itPatapata_UnkMotion7_Coll(Item_GObj* gobj)
     return false;
 }
 
-/// #it_2725_Logic4_Thrown
+void it_2725_Logic4_Thrown(Item_GObj* gobj)
+{
+    Item* ip = GET_ITEM(gobj);
+    it_8027CB3C(gobj);
+    it_80274C88(gobj);
+    ip->xDD4_itemVar.patapata.x28 = 0;
+    ip->xDD4_itemVar.patapata.x24 = 0;
+    ip->xDD4_itemVar.patapata.x20 = 0;
+    Item_80268E5C(gobj, 6, ITEM_ANIM_UPDATE);
+}
 
 bool itPatapata_UnkMotion6_Anim(Item_GObj* gobj)
 {
